@@ -1,5 +1,6 @@
 package com.codewithmosh;
 
+import java.security.InvalidParameterException;
 import java.util.NoSuchElementException;
 
 public class LinkedList {
@@ -107,7 +108,7 @@ public class LinkedList {
             array[index++] = current.value;
             current = current.next;
         }
-        return  array;
+        return array;
     }
 
     public void reverse(){
@@ -124,5 +125,24 @@ public class LinkedList {
         last.next = null;
 
         first = previous;
+    }
+
+    public int getKthFromTheEnd(int k) {
+        if (isEmpty())
+            throw new IllegalStateException();
+
+        var top = first;
+        for (int i = 0; i < k - 1; i++) {
+            top = top.next;
+            if (top == null)
+                throw new IllegalArgumentException();
+        }
+        var toe = first;
+
+        while (top != last) {
+            top = top.next;
+            toe = toe.next;
+        }
+        return toe.value;
     }
 }

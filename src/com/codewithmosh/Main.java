@@ -9,8 +9,10 @@ public class Main {
         list.addLast(10);
         list.addLast(20);
         list.addLast(30);
+        list.addLast(40);
+        list.addLast(50);
 
-        list.reverse();
+        System.out.println(list.getKthFromTheEnd(4));
         var array = list.toArray();
         System.out.println(Arrays.toString(array));
     }
