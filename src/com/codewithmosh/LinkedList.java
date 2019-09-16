@@ -145,4 +145,8 @@ public class LinkedList {
         }
         return toe.value;
     }
+
+    public Node getMiddleNode() {
+        // [10, 20, 30, 40, 50]
+    }
 }
