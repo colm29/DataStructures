@@ -11,9 +11,7 @@ public class Main {
         list.addLast(30);
         list.addLast(40);
         list.addLast(50);
-
-        System.out.println(list.getKthFromTheEnd(4));
-        var array = list.toArray();
-        System.out.println(Arrays.toString(array));
+        var array = list.getMiddleNode();
+        System.out.println(list.getMiddleNode());
     }
 }

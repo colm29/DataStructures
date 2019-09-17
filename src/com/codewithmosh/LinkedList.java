@@ -146,7 +146,21 @@ public class LinkedList {
         return toe.value;
     }
 
-    public Node getMiddleNode() {
-        // [10, 20, 30, 40, 50]
+    public String getMiddleNode() {
+        if (isEmpty())
+            throw new IllegalStateException();
+
+         var a = first;
+         var b = first;
+
+         while (b != last && b.next != last) {
+             b = b.next.next;
+             a = a.next;
+         }
+         if (b == last)
+             return Integer.toString(a.value);
+         else
+             return Integer.toString(a.value) + ',' + a.next.value;
+
     }
 }
