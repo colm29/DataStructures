@@ -163,4 +163,17 @@ public class LinkedList {
              return Integer.toString(a.value) + ',' + a.next.value;
 
     }
+
+    public boolean hasLoop() {
+        var a = first;
+        var b = first;
+
+        while (b.next != null && b != null) {
+            b = b.next.next;
+            a = a.next;
+
+            if (a == b) return true;
+        }
+        return false;
+    }
 }
